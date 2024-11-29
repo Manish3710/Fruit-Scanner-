@@ -1,0 +1,98 @@
+Food,Calories,Carbohydrates (g),Protein (g),Fat (g),Fiber (g),Vitamins,Minerals
+apple,52,14,0.3,0.2,2.4,Vitamin C,Potassium
+banana,89,23,1.1,0.3,2.6,Vitamin B6,Magnesium
+beetroot,43,10,1.6,0.2,3.8,Vitamin B9,Iron
+bell Pepper,31,6,1,0.3,2.1,Vitamin C,Potassium
+cabbage,25,6,1.3,0.1,2.5,Vitamin C,Calcium
+capsicum,40,9,2,0.4,1.2,Vitamin C,Potassium
+carrot,41,10,0.9,0.2,2.8,Vitamin A,Calcium
+cauliflower,25,5,2,0.3,2.5,Vitamin C,Potassium
+chilli Pepper,40,9,1.9,0.4,1.5,Vitamin C,Iron
+corn,96,21,3.4,1.5,2.7,Vitamin B3,Magnesium
+cucumber,16,4,0.6,0.1,0.5,Vitamin K,Potassium
+eggplant,25,6,1,0.2,3,Vitamin C,Iron
+garlic,149,33,6.4,0.5,2.1,Vitamin B6,Calcium
+ginger,80,18,1.8,0.8,2,Vitamin B6,Magnesium
+grapes,69,18,0.7,0.2,0.9,Vitamin C,Potassium
+jalapeno,29,6,1,0.4,1.2,Vitamin C,Potassium
+kiwi,61,15,1.1,0.5,3,Vitamin C,Potassium
+lemon,29,9,1.1,0.3,2.8,Vitamin C,Calcium
+lettuce,15,3,1.4,0.2,1.3,Vitamin A,Iron
+mango,60,15,0.8,0.4,1.6,Vitamin C,Potassium
+onion,40,9,1.1,0.1,1.7,Vitamin C,Potassium
+orange,47,12,0.9,0.1,2.4,Vitamin C,Calcium
+paprika,282,54,14,13,34.9,Vitamin C,Iron
+pear,57,15,0.4,0.1,3.1,Vitamin C,Potassium
+peas,81,14,5,0.4,5.1,Vitamin C,Iron
+pineapple,50,13,0.5,0.1,1.4,Vitamin C,Manganese
+pomegranate,83,19,1.7,1.2,4,Vitamin C,Potassium
+potato,77,17,2,0.1,2.2,Vitamin C,Potassium
+radish,16,3,0.7,0.1,1.6,Vitamin C,Calcium
+soy Beans,446,30,36.5,20,9.3,Vitamin B,Iron
+spinach,23,4,2.9,0.4,2.2,Vitamin A,Iron
+sweetcorn,86,19,3.2,1.2,2.7,Vitamin B,Magnesium
+sweet Potato,86,20,1.6,0.1,3,Vitamin A,Potassium
+tomato,18,4,0.9,0.2,1.2,Vitamin C,Potassium
+turnip,28,6,0.9,0.1,1.8,Vitamin C,Calcium
+watermelon,30,8,0.6,0.2,0.4,Vitamin A,Magnesium
+dal Tadka,198,26,9,7,7,Vitamin B,Iron
+paneer Butter Masala,350,15,12,28,2,Vitamin A,Calcium
+chicken Biryani,360,45,19,12,3,Vitamin B6,Iron
+aloo Paratha,210,32,4,8,4,Vitamin C,Potassium
+rajma,260,40,9,5,13,Vitamin B,Magnesium
+samosa,262,32,4,15,4,Vitamin B,Iron
+palak Paneer,192,10,8,14,3,Vitamin A,Calcium
+roti,120,25,3,1,4,Vitamin B,Phosphorus
+chole Bhature,450,60,13,18,5,Vitamin C,Zinc
+idli,58,12,2,0.4,0.7,Vitamin B,Iron
+dosa,133,22,3,3,1,Vitamin B,Calcium
+upma,192,30,5,6,2,Vitamin B,Magnesium
+vada Pav,300,40,6,12,3,Vitamin B,Iron
+pani Puri,150,25,2,5,2,Vitamin C,Iron
+masala Dosa,168,31,4,3,2,Vitamin B,Iron
+butter Chicken,490,14,30,37,2,Vitamin A,Zinc
+fish Curry,220,6,22,12,1,Vitamin D,Calcium
+pav Bhaji,315,44,7,11,5,Vitamin C,Iron
+lassi,220,28,8,7,0,Vitamin D,Calcium
+gulab Jamun,150,25,2,5,0.2,Vitamin B,Calcium
+rasgulla,100,23,2,0.5,0,Vitamin B,Calcium
+kheer,200,30,6,6,1,Vitamin D,Calcium
+pulao,250,40,6,5,2,Vitamin B,Iron
+bhel Puri,120,20,3,3,4,Vitamin C,Iron
+sambar,120,15,4,5,3,Vitamin C,Potassium
+pongal,206,40,5,4,2,Vitamin B,Iron
+aloo Gobi,180,20,4,9,5,Vitamin C,Potassium
+baingan Bharta,120,10,2,7,5,Vitamin A,Iron
+matar Paneer,240,14,8,17,3,Vitamin C,Calcium
+rasmalai,250,30,5,10,0.5,Vitamin B,Calcium
+Dal Tadka,198,26,9,7,7,Vitamin B,Iron
+Paneer Butter Masala,350,15,12,28,2,Vitamin A,Calcium
+Chicken Biryani,360,45,19,12,3,Vitamin B6,Iron
+Aloo Paratha,210,32,4,8,4,Vitamin C,Potassium
+Rajma,260,40,9,5,13,Vitamin B,Magnesium
+Samosa,262,32,4,15,4,Vitamin B,Iron
+Palak Paneer,192,10,8,14,3,Vitamin A,Calcium
+Roti,120,25,3,1,4,Vitamin B,Phosphorus
+Chole Bhature,450,60,13,18,5,Vitamin C,Zinc
+Idli,58,12,2,0.4,0.7,Vitamin B,Iron
+Dosa,133,22,3,3,1,Vitamin B,Calcium
+Upma,192,30,5,6,2,Vitamin B,Magnesium
+Vada Pav,300,40,6,12,3,Vitamin B,Iron
+Pani Puri,150,25,2,5,2,Vitamin C,Iron
+Masala Dosa,168,31,4,3,2,Vitamin B,Iron
+Butter Chicken,490,14,30,37,2,Vitamin A,Zinc
+Fish Curry,220,6,22,12,1,Vitamin D,Calcium
+Pav Bhaji,315,44,7,11,5,Vitamin C,Iron
+Lassi,220,28,8,7,0,Vitamin D,Calcium
+Gulab Jamun,150,25,2,5,0.2,Vitamin B,Calcium
+Rasgulla,100,23,2,0.5,0,Vitamin B,Calcium
+Kheer,200,30,6,6,1,Vitamin D,Calcium
+Pulao,250,40,6,5,2,Vitamin B,Iron
+Bhel Puri,120,20,3,3,4,Vitamin C,Iron
+Sambar,120,15,4,5,3,Vitamin C,Potassium
+Pongal,206,40,5,4,2,Vitamin B,Iron
+Aloo Gobi,180,20,4,9,5,Vitamin C,Potassium
+Baingan Bharta,120,10,2,7,5,Vitamin A,Iron
+Matar Paneer,240,14,8,17,3,Vitamin C,Calcium
+Rasmalai,250,30,5,10,0.5,Vitamin B,Calcium
+	
