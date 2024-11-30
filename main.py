@@ -17,7 +17,8 @@ def model_prediction(test_image):
     input_arr = np.array([input_arr])  # convert single image to batch
     predictions = model.predict(input_arr)
     return np.argmax(predictions)  # return index of max element
-
+    
+st.set_page_config(layout="centered")
 # Custom CSS for styling
 st.markdown(
     """
@@ -25,15 +26,31 @@ st.markdown(
     body {
         background-image: url('https://example.com/your-background-image.jpg'); /* Replace with your background image URL */
         background-size: cover;
-        color: blue;
+        color: black;
     }
+
+    .full-width-img img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: auto;
+    }
+
+    .stHeader > header {
+        background-color:blue;
+    }
+    
     .sidebar .sidebar-content {
         background-color: rgba(0, 0, 0, 0.7);
         border-radius: 10px;
         padding: 20px;
+
     }
     h1, h2, h3 {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        <!--text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);-->
+        color:black;
+        <!--font-family:serif;-->
     }
     .stButton > button {
         background-color: seagreen;
@@ -71,7 +88,7 @@ app_mode = st.sidebar.selectbox("Select Page", ["Home", "About Project", "Predic
 # Main Page
 if app_mode == "Home":
     st.header("FRUITS & VEGETABLES RECOGNITION SYSTEM")
-    image_path = "home_img.jpg"
+    image_path = "food_scanner_background3.jpg"
     st.image(image_path, use_container_width=True)
 
 # About Project
