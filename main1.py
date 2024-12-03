@@ -136,7 +136,11 @@ elif app_mode == "Prediction":
                     content = f.readlines()
                 label = [i.strip() for i in content]
                 food_item = label[result_index]
-                st.success("Model is Predicting it's a {}".format(food_item))
+                if(food_item[0].lower() in 'aeiou') :
+                    st.success("Model is Predicting it's an {}".format(food_item))
+                else:
+                    st.success("Model is Predicting it's a {}".format(food_item))
+                #st.success("Model is Predicting it's a {}".format(food_item))
 
                 # Display nutrition information
                 nutrition_info = nutrition_data[nutrition_data['Food'] == food_item]
