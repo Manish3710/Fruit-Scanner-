@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 import pandas as pd
 #from PIL import Image
-import imageio
+import pillow
 import numpy as np
 
 # Load nutrition data
@@ -118,7 +118,7 @@ elif app_mode == "Prediction":
         test_image = uploaded_image
     elif camera_image is not None:
         img_array = np.array(camera_image)
-        imageio.imwrite('temp.jpg', imageio.cvtColor(img_array, imageio.COLOR_RGB2BGR))
+        pil.imwrite('temp.jpg', pil.cvtColor(img_array, pil.COLOR_RGB2BGR))
         test_image = 'temp.jpg'
     else:
         test_image = None
