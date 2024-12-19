@@ -87,7 +87,7 @@ app_mode = st.sidebar.selectbox("Select Page", ["Home", "About Project", "Predic
 
 # Main Page
 if app_mode == "Home":
-    st.header("FRUITS & VEGETABLES RECOGNITION SYSTEM")
+    st.header("FOOD & FRUITS RECOGNITION SYSTEM")
     image_path = "food_scanner_background3.jpg"
     st.image(image_path, use_container_width=True)
 
