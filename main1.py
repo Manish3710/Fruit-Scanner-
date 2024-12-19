@@ -2,9 +2,8 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 import pandas as pd
-#from imageio import Image
-import imageio
-import numpy as np
+from PIL import Image  # Replace cv2 with Pillow
+import io
 
 # Load nutrition data
 nutrition_data = pd.read_csv("nutrition_info.csv")  # Ensure this CSV contains food items and their nutrition info
@@ -17,8 +16,9 @@ def model_prediction(test_image):
     input_arr = np.array([input_arr])  # convert single image to batch
     predictions = model.predict(input_arr)
     return np.argmax(predictions)  # return index of max element
-    
+
 st.set_page_config(layout="centered")
+
 # Custom CSS for styling
 st.markdown(
     """
@@ -83,26 +83,13 @@ st.markdown(
 
 # Sidebar
 st.sidebar.title("Dashboard")
-app_mode = st.sidebar.selectbox("Select Page", ["Home", "Prediction"]) #"About Project",
+app_mode = st.sidebar.selectbox("Select Page", ["Home", "Prediction"])
 
 # Main Page
 if app_mode == "Home":
     st.header("FOOD & FRUITS RECOGNITION SYSTEM")
     image_path = "food_scanner_background3.jpg"
     st.image(image_path, use_container_width=True)
-
-# # About Project
-# elif app_mode == "About Project":
-#     st.header("About Project")
-#     st.subheader("About Dataset")
-#     st.text("This dataset contains images of the following food items:")
-#     st.code("fruits- banana, apple, pear, grapes, orange, kiwi, watermelon, pomegranate, pineapple, mango.")
-#     st.code("vegetables- cucumber, carrot, capsicum, onion, potato, lemon, tomato, raddish, beetroot, cabbage, lettuce, spinach, soy bean, cauliflower, bell pepper, chilli pepper, turnip, corn, sweetcorn, sweet potato, paprika, jalepeño, ginger, garlic, peas, eggplant.")
-#     st.subheader("Content")
-#     st.text("This dataset contains three folders:")
-#     st.text("1. train (100 images each)")
-#     st.text("2. test (10 images each)")
-#     st.text("3. validation (10 images each)")
 
 # Prediction Page
 elif app_mode == "Prediction":
@@ -111,16 +98,18 @@ elif app_mode == "Prediction":
     # Option to upload an image or take a picture with the camera
     camera_image = st.camera_input("Take a picture with your camera:")
     uploaded_image = st.file_uploader("or Choose an Image:", type=["jpg", "jpeg", "png"])
-    #camera_image = st.camera_input("Or take a picture with your camera:")
     
     # Use the uploaded image or camera image for prediction
     if uploaded_image is not None:
         test_image = uploaded_image
     elif camera_image is not None:
-        img_array = np.array(camera_image)
-        img_array_bgr = img_array[:, :, ::-1]
-        imageio.imwrite('temp.jpg', imageio.imwrite(img_array, imageio.COLOR_RGB2BGR))
-        test_image = 'temp.jpg'
+        # Convert camera image to Pillow Image
+        img_bytes = io.BytesIO(camera_image.read())
+        image = Image.open(img_bytes)
+        
+        # Save the image as a temporary file
+        image.save("temp.jpg")
+        test_image = "temp.jpg"
     else:
         test_image = None
 
@@ -141,15 +130,11 @@ elif app_mode == "Prediction":
                     st.success("Model is Predicting it's an {}".format(food_item))
                 else:
                     st.success("Model is Predicting it's a {}".format(food_item))
-                #st.success("Model is Predicting it's a {}".format(food_item))
 
                 # Display nutrition information
                 nutrition_info = nutrition_data[nutrition_data['Food'] == food_item]
                 if not nutrition_info.empty:
                     st.subheader("Nutrition Information:")
-                    #st.write(nutrition_info.to_dict(orient='records')[0])  # Display the first record as a dictionary
                     st.table(nutrition_info)
                 else:
                     st.warning("Nutrition information not found for this item.")
-        # else:
-        #     st.warning("Please choose an image file.qqq")
