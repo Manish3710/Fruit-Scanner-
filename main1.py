@@ -119,9 +119,7 @@ elif app_mode == "Prediction":
     elif camera_image is not None:
         img_array = np.array(camera_image)
         img_array_bgr = img_array[:, :, ::-1]
-        
-        imageio.imwrite('temp.jpg', imageio.imwrite('temp.jpg', img_array_bgr))
-        #imageio.imwrite('temp.jpg', imageio.imwrite('temp.jpg', img_array))
+        imageio.imwrite('temp.jpg', imageio.imwrite(img_array, imageio.COLOR_RGB2BGR))
         test_image = 'temp.jpg'
     else:
         test_image = None
