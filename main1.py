@@ -111,7 +111,7 @@ elif app_mode == "Prediction":
     # Option to upload an image or take a picture with the camera
     camera_image = st.camera_input("Take a picture with your camera:")
     uploaded_image = st.file_uploader("or Choose an Image:", type=["jpg", "jpeg", "png"])
-    camera_image = st.camera_input("Or take a picture with your camera:")
+    #camera_image = st.camera_input("Or take a picture with your camera:")
     
     # Use the uploaded image or camera image for prediction
     if uploaded_image is not None:
