@@ -9,7 +9,7 @@ import io
 nutrition_data = pd.read_csv("nutrition_info.csv")  # Ensure this CSV contains food items and their nutrition info
 
 # Tensorflow Model Prediction
-def model_prediction(test_image, confidence_threshold=80):
+def model_prediction(test_image, confidence_threshold=90):
     model = tf.keras.models.load_model("trained_model.h5")
     
     # Load and preprocess the image
@@ -136,7 +136,7 @@ elif app_mode == "Prediction":
         # Predict button
         if st.button("Predict"):
             with st.spinner("Making a prediction..."):
-                result_index, confidence = model_prediction(test_image, confidence_threshold=80)
+                result_index, confidence = model_prediction(test_image, confidence_threshold=90)
 
                 # If the confidence is sufficient
                 if result_index is not None:
