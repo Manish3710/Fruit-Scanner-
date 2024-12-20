@@ -136,7 +136,7 @@ elif app_mode == "Prediction":
         # Predict button
         if st.button("Predict"):
             with st.spinner("Making a prediction..."):
-                result_index, confidence = model_prediction(test_image, confidence_threshold=90)
+                result_index, confidence = model_prediction(test_image, confidence_threshold=80)
 
                 # If the confidence is sufficient
                 if result_index is not None:
