@@ -9,13 +9,30 @@ import io
 nutrition_data = pd.read_csv("nutrition_info.csv")  # Ensure this CSV contains food items and their nutrition info
 
 # Tensorflow Model Prediction
-def model_prediction(test_image):
+def model_prediction(test_image, confidence_threshold=90):
     model = tf.keras.models.load_model("trained_model.h5")
+    
+    # Load and preprocess the image
     image = tf.keras.preprocessing.image.load_img(test_image, target_size=(64, 64))
     input_arr = tf.keras.preprocessing.image.img_to_array(image)
-    input_arr = np.array([input_arr])  # convert single image to batch
+    input_arr = np.array([input_arr])  # Convert single image to batch
+    
+    # Get predictions
     predictions = model.predict(input_arr)
-    return np.argmax(predictions)  # return index of max element
+    confidence_scores = predictions[0]  # Assuming model.predict gives confidence scores per class
+    
+    # Get the class with the highest confidence
+    max_confidence = np.max(confidence_scores)
+    predicted_class_index = np.argmax(confidence_scores)
+    
+    # Convert confidence threshold to decimal for comparison
+    confidence_threshold_decimal = confidence_threshold / 100.0
+    
+    # Check if the confidence exceeds the threshold
+    if max_confidence >= confidence_threshold_decimal:
+        return predicted_class_index, max_confidence
+    else:
+        return None, max_confidence
 
 st.set_page_config(layout="centered")
 
