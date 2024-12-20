@@ -119,22 +119,27 @@ elif app_mode == "Prediction":
         # Predict button
         if st.button("Predict"):
             with st.spinner("Making a prediction..."):
-                result_index = model_prediction(test_image)
+                result_index, confidence = model_prediction(test_image, confidence_threshold=90)
 
-                # Reading Labels
-                with open("labels.txt") as f:
-                    content = f.readlines()
-                label = [i.strip() for i in content]
-                food_item = label[result_index]
-                if(food_item[0].lower() in 'aeiou') :
-                    st.success("Model is Predicting it's an {}".format(food_item))
-                else:
-                    st.success("Model is Predicting it's a {}".format(food_item))
+                # If the confidence is sufficient
+                if result_index is not None:
+                    # Reading Labels
+                    with open("labels.txt") as f:
+                        content = f.readlines()
+                    label = [i.strip() for i in content]
+                    food_item = label[result_index]
+                    
+                    if food_item[0].lower() in 'aeiou':
+                        st.success(f"Model predicts it's an **{food_item}** with confidence **{confidence * 100:.2f}%**")
+                    else:
+                        st.success(f"Model predicts it's a **{food_item}** with confidence **{confidence * 100:.2f}%**")
 
-                # Display nutrition information
-                nutrition_info = nutrition_data[nutrition_data['Food'] == food_item]
-                if not nutrition_info.empty:
-                    st.subheader("Nutrition Information:")
-                    st.table(nutrition_info)
+                    # Display nutrition information
+                    nutrition_info = nutrition_data[nutrition_data['Food'] == food_item]
+                    if not nutrition_info.empty:
+                        st.subheader("Nutrition Information:")
+                        st.table(nutrition_info)
+                    else:
+                        st.warning("Nutrition information not found for this item.")
                 else:
-                    st.warning("Nutrition information not found for this item.")
+                    st.warning(f"The model couldn't confidently predict the item. Confidence was only **{confidence * 100:.2f}%**.")
