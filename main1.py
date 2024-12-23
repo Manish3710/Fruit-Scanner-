@@ -10,8 +10,8 @@ nutrition_data = pd.read_csv("nutrition_info.csv")  # Ensure this CSV contains f
 
 # Tensorflow Model Prediction
 def model_prediction(test_image, confidence_threshold=90):
-    model = tf.keras.models.load_model("trained_model.h5")
-    
+    #model = tf.keras.models.load_model("trained_model.h5")
+    model = tf.keras.models.load_model("trained_model.keras")
     # Load and preprocess the image
     image = tf.keras.preprocessing.image.load_img(test_image, target_size=(64, 64))
     input_arr = tf.keras.preprocessing.image.img_to_array(image)
