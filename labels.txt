@@ -34,3 +34,9 @@ sweetpotato
 tomato
 turnip
 watermelon
+chai
+dalrice
+maggie
+samosa
+soup
+vadapav
